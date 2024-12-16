@@ -1,27 +1,8 @@
 print("Hello")
 
 require("config.lazy")
-
-
-vim.opt.shiftwidth = 2
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.scrolloff = 10
-vim.opt.inccommand = 'split'
-vim.opt.updatetime = 250
-vim.opt.splitright = true
-vim.opt.clipboard = "unnamedplus"
-vim.o.signcolumn = "yes"
-
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
-
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua <CR>")
+require("keymaps")
+require("options")
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

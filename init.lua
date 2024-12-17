@@ -1,8 +1,8 @@
 print("Hello")
 
-require("config.lazy")
-require("keymaps")
 require("options")
+require("keymaps")
+require("config.lazy")
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

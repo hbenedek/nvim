@@ -22,6 +22,10 @@ return {
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
+      vim.keymap.set("n", "<Leader>sw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+        silent)
+      vim.keymap.set("n", "<Leader>cw", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+        silent)
     end
   }
 }

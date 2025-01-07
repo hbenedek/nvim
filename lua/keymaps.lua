@@ -17,6 +17,10 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 -- easier write and quit
 vim.api.nvim_set_keymap("n", "QQ", ":q!<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "WW", ":w!<enter>", { noremap = false })
+vim.api.nvim_set_keymap("n", "j", "jzz", { noremap = false })
+vim.api.nvim_set_keymap("n", "k", "kzz", { noremap = false })
+vim.api.nvim_set_keymap("n", "G", "Gzz", { noremap = false })
+
 
 -- jump begin/end line
 vim.api.nvim_set_keymap("n", "E", "$", { noremap = false })
@@ -37,6 +41,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- jump prev/next
+vim.keymap.set("n", "<C-,>", "<C-o>")
+vim.keymap.set("n", "<C-.>", "<C-i>")
 
 -- source files/lines
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")

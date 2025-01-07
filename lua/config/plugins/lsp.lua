@@ -51,7 +51,7 @@ return {
 								autopep8 = { enabled = false },
 								yapf = { enabled = false },
 								mccabe = { enabled = false },
-								pylsp_mypy = { enabled = false },
+								pylsp_mypy = { enabled = true },
 								pylsp_black = { enabled = false },
 								pylsp_isort = { enabled = false },
 							},

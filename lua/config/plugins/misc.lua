@@ -27,4 +27,11 @@ return {
 		config = true,
 		opts = {},
 	},
+	{ 'sindrets/diffview.nvim' },
+	{ 'xiyaowong/transparent.nvim' },
+	-- {
+	--		"m4xshen/hardtime.nvim",
+	--		dependencies = { "MunifTanjim/nui.nvim" },
+	--		opts = {}
+	-- },
 }

@@ -20,12 +20,12 @@ return {
 				},
 				pickers = {
 					find_files = {
-						file_ignore_patterns = { 'node_modules', '.git', '.venv', '.mypy_cache' },
+						file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache' },
 						hidden = true,
 					},
 				},
 				live_grep = {
-					file_ignore_patterns = { 'node_modules', '.git', '.venv', '.mypy_cache' },
+					file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache' },
 					additional_args = function(_)
 						return { '--hidden' }
 					end,
@@ -41,13 +41,15 @@ return {
 				require("telescope.builtin").find_files {
 					cwd = vim.fn.stdpath("config") }
 			end, { desc = "[F]ind [C]onfig" })
-			vim.keymap.set('n', '<space>/', function()
-				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-				require("telescope.builtin").current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-					winblend = 10,
-					previewer = false,
-				})
-			end, { desc = '[/] Fuzzily search in current buffer' })
+			vim.keymap.set('n', '<space>/', require("telescope.builtin").current_buffer_fuzzy_find,
+				{ desc = '[/] Fuzzily search in current buffer' })
+			--vim.keymap.set('n', '<space>/', function()
+			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
+			--	require("telescope.builtin").current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+			--		winblend = 10,
+			--		previewer = false,
+			--	})
+			--end, { desc = '[/] Fuzzily search in current buffer' })
 			vim.keymap.set("n", "<Leader>fw", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
 				{ desc = "[F]ind [W]orktress" })
 			vim.keymap.set("n", "<Leader>cw", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
@@ -57,6 +59,13 @@ return {
 				require('telescope.builtin').lsp_document_symbols(opts)
 			end
 			vim.keymap.set("n", "<leader>ff", showOnlyFunctions, { desc = "[F]ind [F]unctions" })
+			local function test()
+				local opts = { symbols = { "function", "method", "class" } }
+				require("telescope.builtin").lsp_dynamic_workspace_symbols(opts)
+			end
+			vim.keymap.set("n", "<leader>fa", test,
+				{ desc = "[F]ind [A]ll Workspace Symbols" })
 		end
+
 	}
 }

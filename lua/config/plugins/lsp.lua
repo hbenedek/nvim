@@ -54,6 +54,7 @@ return {
 								pylsp_mypy = { enabled = true },
 								pylsp_black = { enabled = false },
 								pylsp_isort = { enabled = false },
+								rope_autoimport = { enabled = true }
 							},
 						},
 					},

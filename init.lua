@@ -1,5 +1,3 @@
-print("Hello")
-
 require("options")
 require("keymaps")
 require("config.lazy")
@@ -21,20 +19,3 @@ vim.api.nvim_create_autocmd('TermOpen', {
 		vim.opt.number = false
 	end
 })
-
---vim.keymap.set({ "n", "t" }, "<C-j>", function()
---	-- Get the current window's type
---	local buftype = vim.api.nvim_buf_get_option(0, "buftype")
---
---	-- If the current window is a terminal, close it
---	if buftype == "terminal" then
---		vim.cmd("close")
---	else
---		-- Otherwise, open a new terminal
---		vim.cmd.vnew()
---		vim.cmd.term() --TODO: keep prev term instead of new
---		vim.cmd.wincmd("J")
---		vim.api.nvim_win_set_height(0, 10)
---		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("i", true, false, true), "n", false)
---	end
---end)

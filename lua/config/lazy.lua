@@ -26,8 +26,21 @@ require("lazy").setup({
 	spec = {
 		-- import your plugins
 		--{ "folke/tokyonight.nvim",  config = function() vim.cmd.colorscheme "tokyonight" end },
-		{ 'projekt0n/github-nvim-theme', name = 'github-theme', config = function() vim.cmd(
-			'colorscheme github_dark_dimmed') end },
+		{
+			'projekt0n/github-nvim-theme',
+			name = 'github-theme',
+			config = function()
+				-- require("github-theme").setup({
+				--groups = {
+				--	all = {
+				--		Normal = { fg = "#FFFFFF" }, -- Set default text color to white
+				--	}
+				--}
+				--})
+				vim.cmd(
+					'colorscheme github_dark_dimmed')
+			end
+		},
 		{ import = "config.plugins" },
 	},
 })

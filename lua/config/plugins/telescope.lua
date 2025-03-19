@@ -20,12 +20,12 @@ return {
 				},
 				pickers = {
 					find_files = {
-						file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache' },
-						hidden = true,
+						file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache', 'venv' },
+						hidden = false,
 					},
 				},
 				live_grep = {
-					file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache' },
+					file_ignore_patterns = { 'node_modules', '.git/', '.venv', '.mypy_cache', 'venv' },
 					additional_args = function(_)
 						return { '--hidden' }
 					end,

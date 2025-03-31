@@ -22,6 +22,10 @@ vim.api.nvim_set_keymap("n", "k", "kzz", { noremap = false })
 vim.api.nvim_set_keymap("n", "G", "Gzz", { noremap = false })
 
 
+-- easier normal mode
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = false })
+
 -- jump begin/end line
 vim.api.nvim_set_keymap("n", "E", "$", { noremap = false })
 vim.api.nvim_set_keymap("n", "B", "^", { noremap = false })
